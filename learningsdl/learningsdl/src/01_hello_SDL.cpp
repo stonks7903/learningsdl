@@ -84,10 +84,37 @@ int main( int argc, char* args[] )
 					{
 						quit = true;
 					}
+					else if (e.type == SDL_KEYDOWN)
+					{
+						//Select surfaces based on key press
+						switch (e.key.keysym.sym)
+						{
+						case SDLK_UP:
+							gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_UP];
+							break;
+
+						case SDLK_DOWN:
+							gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN];
+							break;
+
+						case SDLK_LEFT:
+							gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
+							break;
+
+						case SDLK_RIGHT:
+							gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
+							break;
+
+						default:
+							gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
+							break;
+						}
+					}
 				}
 
+				SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
 
-				SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
+				//Update the surface
 				SDL_UpdateWindowSurface(gWindow);
 			}
 		}
@@ -131,7 +158,7 @@ bool init()
 bool loadMedia()
 {
 	bool success = true;
-	gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("src/press.bmp");
+	gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("img/press.bmp");
 	if (gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] == NULL)
 	{
 		printf("Failed to load default image!\n");
@@ -139,7 +166,7 @@ bool loadMedia()
 	}
 
 	//Load up surface
-	gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] = loadSurface("src/up.bmp");
+	gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] = loadSurface("img/up.bmp");
 	if (gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] == NULL)
 	{
 		printf("Failed to load up image!\n");
@@ -147,7 +174,7 @@ bool loadMedia()
 	}
 
 	//Load down surface
-	gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] = loadSurface("src/down.bmp");
+	gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] = loadSurface("img/down.bmp");
 	if (gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] == NULL)
 	{
 		printf("Failed to load down image!\n");
@@ -155,7 +182,7 @@ bool loadMedia()
 	}
 
 	//Load left surface
-	gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("src/left.bmp");
+	gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("img/left.bmp");
 	if (gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
 	{
 		printf("Failed to load left image!\n");
@@ -163,7 +190,7 @@ bool loadMedia()
 	}
 
 	//Load right surface
-	gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("src/right.bmp");
+	gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("img/right.bmp");
 	if (gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] == NULL)
 	{
 		printf("Failed to load right image!\n");
