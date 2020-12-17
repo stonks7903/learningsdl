@@ -1,0 +1,15 @@
+﻿  01_hello_SDL.cpp
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_GetError referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_RWFromFile referenced in function "struct SDL_Surface * __cdecl loadSurface(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadSurface@@YAPAUSDL_Surface@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_FreeSurface referenced in function "void __cdecl close(void)" (?close@@YAXXZ)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_LoadBMP_RW referenced in function "struct SDL_Surface * __cdecl loadSurface(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?loadSurface@@YAPAUSDL_Surface@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_UpperBlit referenced in function _SDL_main
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_CreateWindow referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_GetWindowSurface referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_UpdateWindowSurface referenced in function _SDL_main
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_DestroyWindow referenced in function "void __cdecl close(void)" (?close@@YAXXZ)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_PollEvent referenced in function _SDL_main
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_Init referenced in function "bool __cdecl init(void)" (?init@@YA_NXZ)
+01_hello_SDL.obj : error LNK2019: unresolved external symbol _SDL_Quit referenced in function "void __cdecl close(void)" (?close@@YAXXZ)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\dev\learningsdl\learningsdl\Debug\learningsdl.exe : fatal error LNK1120: 13 unresolved externals
